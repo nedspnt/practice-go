@@ -8,7 +8,9 @@ jobs:
       - run: echo "The job is automatically triggered by a {{ github.event_name }} event."
       - run: echo "repository name is  ${{ github.repository}}, branch ${{ github.ref }}"
       - run: echo "workspace ${{ github.workspace }}"
-      - run: ls ${{ github.workspace }}
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
       
       # # use specific version, see 'using multiple versions of Go' as an alternative
       # - name: Setup Go 1.21.x
